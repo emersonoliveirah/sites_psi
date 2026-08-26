@@ -1,6 +1,3 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import About from "@/components/sections/About";
@@ -9,17 +6,12 @@ import Faq from "@/components/sections/Faq";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <About />
-        <HowItWorks />
-        <Faq />
-      </main>
-      <Footer />
-      <WhatsAppFloat />
-    </>
+    <main id="main">
+      <Hero />
+      <Services />
+      <About />
+      <HowItWorks />
+      <Faq />
+    </main>
   );
 }

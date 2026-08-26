@@ -1,5 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Karla } from "next/font/google";
+import { siteConfig } from "@/lib/content";
+import { psychologistSchema } from "@/lib/structuredData";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -15,6 +20,7 @@ const karla = Karla({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.siteUrl),
   title: "Maiara Pereira de Souza — Psicóloga em Brasília, DF",
   description:
     "Psicoterapia infantojuvenil, individual e em grupo, com foco em habilidades sociais e orientação a pais e escola. Atendimento em Brasília, DF.",
@@ -22,17 +28,34 @@ export const metadata: Metadata = {
     title: "Maiara Pereira de Souza — Psicóloga em Brasília, DF",
     description:
       "Psicoterapia infantojuvenil, individual e em grupo, com foco em habilidades sociais e orientação a pais e escola.",
-    url: "https://[dominio].com.br",
-    siteName: "Maiara Pereira de Souza",
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.name,
     locale: "pt_BR",
     type: "website",
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#48583F",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${fraunces.variable} ${karla.variable}`}>
-      <body>{children}</body>
+      <body>
+        <a href="#main" className="skip-link">
+          Pular para o conteúdo
+        </a>
+        <Header />
+        {children}
+        <Footer />
+        <WhatsAppFloat />
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(psychologistSchema) }}
+        />
+      </body>
     </html>
   );
 }

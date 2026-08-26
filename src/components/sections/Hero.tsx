@@ -18,10 +18,7 @@ export default function Hero() {
             mais cuidado — em um ritmo que respeita o seu.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button 
-            href={siteConfig.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer">Agendar atendimento</Button>
+            <Button href="#contato">Agendar atendimento</Button>
             <a href="#como-funciona" className="text-[15px] font-semibold text-sage-deep">
               Como funciona a primeira sessão →
             </a>
@@ -38,7 +35,7 @@ export default function Hero() {
         <div className="relative aspect-[3/4] overflow-hidden rounded-panel bg-sage-tint">
           <Image
             src="/images/maiara-foto.jpg"
-            alt={siteConfig.name}
+            alt={`${siteConfig.name}, psicóloga, sorrindo`}
             fill
             priority
             className="object-cover"

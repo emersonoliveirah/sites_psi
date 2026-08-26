@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade — [Nome Sobrenome]",
+  title: "Política de Privacidade — Maiara Pereira de Souza",
 };
 
 export default function PrivacyPolicy() {
   return (
-    <main className="mx-auto max-w-[720px] px-6 py-20">
+    <main id="main" className="mx-auto max-w-[720px] px-6 py-20">
       <Link href="/" className="text-sm font-semibold text-sage-deep">
         ← Voltar para o início
       </Link>

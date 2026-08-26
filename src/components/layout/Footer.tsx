@@ -1,5 +1,11 @@
 import Link from "next/link";
+import NavItem from "@/components/ui/NavItem";
 import { navLinks, siteConfig } from "@/lib/content";
+
+const moreLinks = [
+  { href: "/indicacoes", label: "Indicações de leitura" },
+  { href: "/eventos", label: "Eventos" },
+];
 
 export default function Footer() {
   return (
@@ -20,6 +26,11 @@ export default function Footer() {
           </div>
           <ul className="flex flex-wrap gap-x-7 gap-y-3 text-sm">
             {navLinks.map((link) => (
+              <li key={link.href}>
+                <NavItem href={link.href} label={link.label} className="hover:text-white" />
+              </li>
+            ))}
+            {moreLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="hover:text-white">
                   {link.label}

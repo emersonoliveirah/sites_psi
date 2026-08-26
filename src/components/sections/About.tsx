@@ -9,7 +9,7 @@ export default function About() {
         <div className="relative aspect-[4/5] overflow-hidden rounded-panel bg-sage-tint">
           <Image
             src="/images/maiara-foto.jpg"
-            alt={siteConfig.name}
+            alt={`Retrato de ${siteConfig.name}`}
             fill
             priority
             className="object-cover"

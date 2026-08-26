@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import NavItem from "@/components/ui/NavItem";
 import { MenuIcon, CloseIcon } from "@/components/icons";
 import { navLinks, siteConfig } from "@/lib/content";
 
@@ -12,26 +13,23 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-off-white/90 shadow-[0_1px_0_rgba(38,38,32,0.07)] backdrop-blur-sm">
       <nav className="mx-auto flex max-w-[1180px] items-center justify-between px-6 py-5">
-        <Link href="#" className="font-display text-[19px] font-medium tracking-wide text-text">
+        <Link href="/" className="font-display text-[19px] font-medium tracking-wide text-text">
           {siteConfig.name}
         </Link>
 
         <ul className="hidden items-center gap-9 text-[15px] font-medium md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className="text-text-soft transition-colors hover:text-sage-deep">
-                {link.label}
-              </Link>
+              <NavItem
+                href={link.href}
+                label={link.label}
+                className="text-text-soft transition-colors hover:text-sage-deep"
+              />
             </li>
           ))}
         </ul>
 
-        <Button 
-        href={siteConfig.whatsappUrl} 
-        size="sm" 
-        className="hidden md:inline-flex"
-        target="_blank"
-        rel="noopener noreferrer">
+        <Button href="/#contato" size="sm" className="hidden md:inline-flex">
           Agendar horário
         </Button>
 
@@ -53,20 +51,15 @@ export default function Header() {
       >
         <div className="flex flex-col gap-5 px-6 pb-7 pt-2">
           {navLinks.map((link) => (
-            <Link
+            <NavItem
               key={link.href}
               href={link.href}
+              label={link.label}
               onClick={() => setOpen(false)}
               className="text-base font-medium text-text"
-            >
-              {link.label}
-            </Link>
+            />
           ))}
-          <Button 
-          href={siteConfig.whatsappUrl} 
-          onClick={() => setOpen(false)}
-          target="_blank"
-          rel="noopener noreferrer">
+          <Button href="/#contato" onClick={() => setOpen(false)}>
             Agendar horário
           </Button>
         </div>

@@ -21,3 +21,23 @@ export interface NavLink {
   href: string;
   label: string;
 }
+
+export interface PostMeta {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+}
+
+export interface BookRecommendation {
+  title: string;
+  author: string;
+  audience: string;
+  note: string;
+}
+
+export interface EventItem {
+  year: string;
+  title: string;
+  description: string;
+}

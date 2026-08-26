@@ -38,15 +38,21 @@ export default function Button({
   rel,
   onClick,
 }: ButtonProps) {
+  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-transform duration-150 hover:-translate-y-0.5 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+
+  // Links com # em qualquer posição (ex.: "#contato" ou "/#contato") usam <a>
+  // nativa: o next/link intercepta o clique pro seu router e nem sempre rola
+  // até o elemento quando a navegação é só de hash.
+  if (href.includes("#")) {
+    return (
+      <a href={href} id={id} target={target} rel={rel} onClick={onClick} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      id={id}
-      target={target}
-      rel={rel}
-      onClick={onClick}
-      className={`inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-transform duration-150 hover:-translate-y-0.5 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
-    >
+    <Link href={href} id={id} target={target} rel={rel} onClick={onClick} className={classes}>
       {children}
     </Link>
   );

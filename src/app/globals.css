@@ -38,3 +38,21 @@ h1, h2, h3 {
   outline-offset: 3px;
   border-radius: 4px;
 }
+
+/* Skip-link — invisível até receber foco por teclado */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--color-sage-deep);
+  color: var(--color-off-white);
+  padding: 12px 20px;
+  border-radius: 0 0 8px 0;
+  z-index: 100;
+  font-size: 14px;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 0;
+  top: 0;
+}
