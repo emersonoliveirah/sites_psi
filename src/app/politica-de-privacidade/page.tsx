@@ -3,6 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade — Maiara Pereira de Souza",
+  description:
+    "Política de privacidade do site da psicóloga Maiara Pereira de Souza, conforme a LGPD (Lei 13.709/2018).", 
 };
 
 export default function PrivacyPolicy() {
