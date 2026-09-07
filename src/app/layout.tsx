@@ -42,12 +42,17 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${fraunces.variable} ${karla.variable}`}>
-      <body>
+      <body className="flex min-h-screen flex-col">
         <a href="#main" className="skip-link">
           Pular para o conteúdo
         </a>
         <Header />
-        {children}
+        
+        {/* Wrapper flex-1 adicionado para expandir o conteúdo e empurrar o footer */}
+        <div className="flex-1 w-full">
+          {children}
+        </div>
+        
         <Footer />
         <WhatsAppFloat />
         <script
