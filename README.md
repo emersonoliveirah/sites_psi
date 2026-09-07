@@ -18,7 +18,7 @@ Abre em `http://localhost:3000`.
 | Rota | Conteúdo |
 |---|---|
 | `/` | Home (hero, atendimentos, sobre, como funciona, FAQ) |
-| `/blog` | Lista de artigos + formulário de newsletter |
+| `/blog` | Lista de artigos |
 | `/blog/[slug]` | Artigo individual (arquivos `.mdx` em `content/posts/`) |
 | `/indicacoes` | Indicações de leitura |
 | `/eventos` | Participações em eventos/congressos (dados reais do Lattes) |
@@ -44,14 +44,6 @@ Adicionar um artigo novo no blog = criar um arquivo `.mdx` novo em `content/post
 mexer em nenhum componente — a lista em `/blog` e as páginas individuais são geradas
 automaticamente a partir dos arquivos ali.
 
-## Newsletter — ainda não conectada
-
-O formulário em `/blog` e a rota `src/app/api/newsletter/route.ts` estão funcionando (validam o
-e-mail, mostram sucesso/erro), mas **não cadastram ninguém em lugar nenhum ainda** — o endpoint
-responde erro 501 de propósito até ser conectado a um provedor real. Escolha um (Buttondown,
-Mailchimp, Resend Audiences etc.), pegue a API key, e substitua o `TODO` comentado dentro de
-`route.ts`. Depois disso é só guardar a key numa env var na Vercel.
-
 ## Conteúdo do blog — cuidado ético
 
 Os textos em `content/posts/` são conteúdo educativo genérico (o que é TCC, sinais de ansiedade,
@@ -70,7 +62,6 @@ mesmo anonimizado. Ao escrever novos artigos, mantenha esse mesmo nível — te�
 - [ ] Revisar o texto da Política de Privacidade com apoio jurídico (LGPD)
 - [ ] Confirmar se o telefone fixo deve aparecer no site (hoje só WhatsApp é exibido)
 - [ ] Preencher `books` em `content.ts` com as indicações de leitura reais dela
-- [ ] Conectar a newsletter a um provedor real (ver seção acima)
 
 ## Deploy
 

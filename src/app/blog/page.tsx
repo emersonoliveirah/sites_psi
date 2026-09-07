@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
-import NewsletterSignup from "@/components/ui/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Blog — Maiara Pereira de Souza",
@@ -40,10 +39,6 @@ export default function BlogIndex() {
           </li>
         ))}
       </ul>
-
-      <div className="mt-12">
-        <NewsletterSignup />
-      </div>
     </main>
   );
 }
